@@ -1,0 +1,15 @@
+[
+    {
+      "id": "button",
+      "html": "<button class='px-4 py-2 bg-blue-500 text-white rounded'>Button</button>",
+      "preview": "<button class='px-4 py-2 bg-blue-500 text-white rounded'>Button</button>",
+      "name": "Button"
+    },
+    {
+      "id": "card",
+      "html": "<div class='max-w-sm rounded overflow-hidden shadow-lg'>...</div>",
+      "preview": "<div class='max-w-sm rounded overflow-hidden shadow-lg'>...</div>",
+      "name": "Card"
+    }
+  ]
+  
