@@ -8,12 +8,15 @@ function renderSidebar(components) {
   components.forEach(component => {
     const componentElem = document.createElement('div');
     componentElem.innerHTML = component.preview;
-    componentElem.className = 'p-2 border rounded my-2 bg-white cursor-pointer';
+    // Adds a surrounding white border frame around each component but does not look the best
+    // componentElem.className = 'p-2 border rounded my-2 bg-white cursor-pointer';
+    componentElem.className = 'p-2 border cursor-pointer';
     componentElem.draggable = true;
     componentElem.ondragstart = (ev) => drag(ev, component.html);
     sidebar.appendChild(componentElem);
   });
 }
+
 // allowing drop
 function allowDrop(event) {
   event.preventDefault();
@@ -87,6 +90,6 @@ function exportHTML() {
   const blob = new Blob([htmlStruct], { type: "text/html" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
-  link.download = "page.html";
+  link.download = "windframe.html";
   link.click();
 }

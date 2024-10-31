@@ -1,15 +1,63 @@
 [
     {
       "id": "button",
-      "html": "<button class='px-4 py-2 bg-blue-500 text-white rounded'>Button</button>",
-      "preview": "<button class='px-4 py-2 bg-blue-500 text-white rounded'>Button</button>",
+      "html": "<button class='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-200'>Button</button>",
+      "preview": "<button class='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-200'>Button</button>",
       "name": "Button"
     },
     {
       "id": "card",
-      "html": "<div class='max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white'>Card Content</div>",
-      "preview": "<div class='max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white'>Card</div>",
+      "html": "<div class='max-w-sm rounded overflow-hidden shadow-lg p-6 bg-white'><h2 class='text-xl font-semibold mb-2'>Card Title</h2><p class='text-gray-700'>This is some content within the card.</p></div>",
+      "preview": "<div class='max-w-sm rounded overflow-hidden shadow-lg p-6 bg-white'><h2 class='text-xl font-semibold mb-2'>Card Title</h2><p class='text-gray-700'>This is some content within the card.</p></div>",
       "name": "Card"
+    },
+    {
+      "id": "navbar",
+      "html": "<nav class='bg-gray-800'><div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'><div class='relative flex h-16 items-center justify-between'><div class='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'><div class='flex flex-shrink-0 items-center'><img class='h-8 w-auto' src='https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500' alt='Logo'></div><div class='hidden sm:ml-6 sm:block'><div class='flex space-x-4'><a href='#' class='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Home</a><a href='#' class='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>About</a><a href='#' class='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Contact</a></div></div></div></div></div></nav>",
+      "preview": "<nav class='bg-gray-800'><div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'><div class='flex h-16 items-center justify-between'><div class='flex items-center'><img class='h-8 w-auto' src='https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500' alt='Logo'></div></div></div></nav>",
+      "name": "Navbar"
+    },
+    {
+      "id": "input",
+      "html": "<input type='text' class='border border-gray-300 rounded-md p-2 w-full' placeholder='Enter text here'>",
+      "preview": "<input type='text' class='border border-gray-300 rounded-md p-2 w-full' placeholder='Enter text here'>",
+      "name": "Input Field"
+    },
+    {
+      "id": "label",
+      "html": "<label class='block text-sm font-medium text-gray-700 mb-1'>Label</label>",
+      "preview": "<label class='block text-sm font-medium text-gray-700 mb-1'>Label</label>",
+      "name": "Label"
+    },
+    {
+      "id": "dropdown",
+      "html": "<div class='relative'><select class='block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded hover:border-blue-500 focus:outline-none focus:ring focus:ring-blue-200'><option>Select an option</option><option>Option 1</option><option>Option 2</option></select><div class='pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700'><svg class='h-5 w-5' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 9l6 6 6-6' /></svg></div></div>",
+      "preview": "<div class='relative'><select class='block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded'><option>Select an option</option></select></div>",
+      "name": "Dropdown"
+    },
+    {
+      "id": "alert",
+      "html": "<div class='p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded' role='alert'>This is an alert message!</div>",
+      "preview": "<div class='p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded' role='alert'>This is an alert message!</div>",
+      "name": "Alert"
+    },
+    {
+      "id": "tooltip",
+      "html": "<div class='relative inline-block'><button class='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-200'>Hover me</button><div class='absolute z-10 hidden mt-2 w-48 bg-gray-800 text-white text-sm rounded shadow-lg p-2'>This is a tooltip!</div></div>",
+      "preview": "<div class='relative inline-block'><button class='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-200'>Hover me</button><div class='absolute z-10 hidden mt-2 w-48 bg-gray-800 text-white text-sm rounded shadow-lg p-2'>This is a tooltip!</div></div>",
+      "name": "Tooltip"
+    },
+    {
+      "id": "badge",
+      "html": "<span class='inline-flex items-center px-2 py-0.5 text-sm font-medium text-green-800 bg-green-100 rounded-full'>New</span>",
+      "preview": "<span class='inline-flex items-center px-2 py-0.5 text-sm font-medium text-green-800 bg-green-100 rounded-full'>New</span>",
+      "name": "Badge"
+    },
+    {
+      "id": "progress-bar",
+      "html": "<div class='relative pt-1'><div class='flex mb-2 items-center justify-between'><div><span class='text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200'>Progress</span></div><div class='text-right'><span class='text-xs font-semibold inline-block text-teal-600'>70%</span></div></div><div class='flex h-2 mb-4 overflow-hidden text-xs bg-gray-200 rounded'><div style='width:70%' class='flex flex-col text-center text-white justify-center bg-teal-600'></div></div></div>",
+      "preview": "<div class='relative pt-1'><div class='flex mb-2 items-center justify-between'><div><span class='text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200'>Progress</span></div></div><div class='flex h-2 mb-4 overflow-hidden text-xs bg-gray-200 rounded'><div style='width:70%' class='flex flex-col text-center text-white justify-center bg-teal-600'></div></div></div>",
+      "name": "Progress Bar"
     }
   ]
   
