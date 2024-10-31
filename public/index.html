@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>windframe</title>
+  <link rel="stylesheet" href="output.css"> <!-- tailwind -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-100 flex">
 
-    <!-- Sidebar with draggable components -->
-<div id="sidebar">
-    <!-- Dynamically filled with components from JSON -->
+<!-- sidebar -->
+  <div id="sidebar" class="w-1/4 bg-gray-200 p-4">
+    <h3 class="text-xl font-bold mb-4">Component List</h3>
+    <div id="components-list"></div>
   </div>
+
   
-  <!-- Drop zone for the canvas -->
-  <div id="canvas" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <!-- Components will appear here -->
+<!-- canvas -->
+  <div id="canvas" class="w-3/4 bg-white p-4 min-h-screen" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h2 class="text-xl font-bold mb-4">Interactive Canvas</h2>
   </div>
-  
-    
+
+<!-- html export -->
+  <button onclick="exportHTML()" class="absolute bottom-4 right-4 px-4 py-2 bg-blue-500 text-white rounded">Export Design as HTML</button>
+
+  <script src="app.js"></script>
 </body>
 </html>

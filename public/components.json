@@ -7,8 +7,8 @@
     },
     {
       "id": "card",
-      "html": "<div class='max-w-sm rounded overflow-hidden shadow-lg'>...</div>",
-      "preview": "<div class='max-w-sm rounded overflow-hidden shadow-lg'>...</div>",
+      "html": "<div class='max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white'>Card Content</div>",
+      "preview": "<div class='max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white'>Card</div>",
       "name": "Card"
     }
   ]
