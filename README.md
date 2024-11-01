@@ -1,7 +1,7 @@
 # windframe
 ![In Development](https://img.shields.io/badge/status-In%20Development-yellow)
 
- Autogenerate Tailwind CSS component layouts with an HTML drag-and-drop editor.
+Autogenerate Tailwind CSS component layouts with an HTML drag-and-drop editor. Export and save HTML file to use in your own projects.
  
 [![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)](#) [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](#) [![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](#)
 
