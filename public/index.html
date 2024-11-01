@@ -11,16 +11,64 @@
 <body class="bg-gray-100 flex">
 
 
-<!-- sidebar -->
-  <div id="sidebar" class="w-1/4 bg-gray-200 p-4">
-    <h3 class="text-xl font-bold mb-4">Component List</h3>
-    <div id="components-list"></div>
-  </div>
+    <div id="howToModal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+      
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                  <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                    <svg class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                    </svg>
+                  </div>
+                  <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                    <h3 class="text-base font-semibold text-gray-900" id="modal-title">Windframe - Tailwind CSS editor</h3>
+                    <br><br>
+                    <h3 class="text-base font-semibold text-gray-900" id="modal-howTo">How To Use Windframe</h3>
+                    <div class="mt-2">
+                      <p class="text-sm text-gray-500">Simply drag and drop elements from the components list on the left into the canvas. When finished with your design, export the canvas as HTML via the Export Design button at the bottom of the page. This will download a windframe.html file which can be further modified to your liking.
+                        <br><br>
+                        
+                      </p>
+                      <h3 class="text-base font-semibold text-gray-900" id="modal-about">About</h3>
+                      <p class="text-sm text-gray-500">
+                        This utility was developed out of necessity to rapidly add Tailwind elements to a webpage and having no desire to pay for any premium services when doing so. It's not an entire website builder, but instead a rapid proof-of-concept designer utility that can be quickly exported and added into ongoing development projects.
+                        <br><br><i>Please note this utility is still under active development.</i>
+                      </p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                <button type="button" onclick="document.getElementById('howToModal').style.display='none'" class="inline-flex w-full justify-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 sm:ml-3 sm:w-auto">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>  
+      </div>
+      
+
+
+  <div id="sidebar" class="sticky top-0 z-10 w-full max-w-screen-lg px-4 mx-auto lg:px-12">
+    <h3 class="text-md font-bold mb-4">Components</h3>
+    <div id="components-list" class="relative overflow-hidden bg-gray shadow-md bg-gray-50 dark:bg-gray-800 md:rounded-lg">
+      <!-- <div class="flex flex-col items-center justify-between p-4 space-y-3 md:flex-row md:space-y-0 md:space-x-4"> -->
+            
+          </a>
+        </div>
+      </div>
+
 
   
 <!-- canvas -->
-  <div id="canvas" class="w-3/4 bg-white p-4 min-h-screen mx-auto" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <h2 class="text-xl font-bold mb-4">Interactive Canvas</h2>
+ <!-- mx-auto -->
+  <!-- <div id="canvas" class="w-3/4 bg-white p-4 min-h-screen mx-auto" ondrop="drop(event)" ondragover="allowDrop(event)"> -->
+  <div id="canvas" class="w-3/4 bg-white p-4 min-h-screen" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <!-- <h2 class="text-xl font-bold mb-4">Interactive Canvas</h2> -->
   </div>
 
 
