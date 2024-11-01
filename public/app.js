@@ -1,22 +1,22 @@
-//enabling drop + drag
+// enabling drop + drag
 function allowDrop(event) {
   event.preventDefault();
 }
+
 function drag(event, componentHtml) {
   event.dataTransfer.setData("text/html", componentHtml);
-  // Also set ID of dragged element if it's an existing component
-  const elementId = event.target.id; // Assuming the draggable element has an ID
+  const elementId = event.target.id;
   event.dataTransfer.setData("text/plain", elementId);
 }
 
-//drop to canvas
+// drop to canvas
 function drop(event) {
   event.preventDefault();
 
   const componentHtml = event.dataTransfer.getData("text/html");
   const canvas = document.getElementById("canvas");
 
-  // check if  dropping new component from the components list otherwise its existing canvas element
+  // check if dropping new component from the components list otherwise it's existing canvas element
   if (componentHtml) {
     const crtComponent = document.createElement("div");
 
@@ -26,7 +26,6 @@ function drop(event) {
     crtComponent.style.top = `${event.clientY - canvas.offsetTop}px`;
     crtComponent.className = "border border-gray-400 p-4 relative"; // sample Tailwind
     crtComponent.setAttribute("draggable", "true");
-    // assigns uniqueid for future canvas reference if we want to reposition
     crtComponent.id = `component-${Date.now()}`; // unique id is based on timestamp to ensure uniqueness
 
     // event listeners
@@ -46,7 +45,6 @@ function drop(event) {
       // update the position of the element
       draggedElement.style.left = `${newLeft}px`;
       draggedElement.style.top = `${newTop}px`;
-      // force visibility of Tailwind element
       draggedElement.style.opacity = "1"; // Ensure it's fully visible
       draggedElement.style.display = "block"; // Make sure it's displayed
     }
@@ -58,19 +56,17 @@ function attachEventListeners(element) {
   element.addEventListener("dragend", dragMoveEnd);
   element.addEventListener("mousedown", (e) => {
     if (!e.target.classList.contains("resize-handle")) {
-      dragMoveStart(e); // Start dragging if not clicking on a resize handle 
-                        // otherwise resize handles overlap and prevent reposition of existing elements on canvas
+      dragMoveStart(e);
     }
   });
   element.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevents event bubbling to canvas
+    e.stopPropagation();
     reselectElem(element);
   });
 
-  //right-click context menu appears
+  // right-click context menu appears
   element.addEventListener("contextmenu", (e) => showContextMenu(e, element));
 }
-
 
 function dragMoveStart(event) {
   event.dataTransfer.setData("text/plain", null); // for Firefox
@@ -94,15 +90,14 @@ function dragMoveEnd(event) {
 // defining resize handles at corners
 function addResizeHandles(element) {
   const corners = [
-    { top: 0, left: 0, cursor: "nwse-resize" },  // Top-left corner
-    { top: 0, right: 0, cursor: "nesw-resize" }, // Top-right corner
-    { bottom: 0, left: 0, cursor: "nesw-resize" }, // Bottom-left corner
-    { bottom: 0, right: 0, cursor: "nwse-resize" }  // Bottom-right corner
+    { top: 0, left: 0, cursor: "nwse-resize" }, 
+    { top: 0, right: 0, cursor: "nesw-resize" }, 
+    { bottom: 0, left: 0, cursor: "nesw-resize" }, 
+    { bottom: 0, right: 0, cursor: "nwse-resize" } 
   ];
 
   corners.forEach(corner => {
     const resizeHandle = document.createElement("div");
-    //forcing stylign here also defined in style.css
     resizeHandle.style.width = "10px";
     resizeHandle.style.height = "10px";
     resizeHandle.style.background = "transparent";
@@ -111,8 +106,8 @@ function addResizeHandles(element) {
     resizeHandle.className = "resize-handle";
     resizeHandle.style.cursor = corner.cursor;
 
-    //force handle position to corners
-    resizeHandle.style[corner.top !== undefined ? 'top' : 'bottom'] = "-5px"; //offset
+    // force handle position to corners
+    resizeHandle.style[corner.top !== undefined ? 'top' : 'bottom'] = "-5px"; // offset
     resizeHandle.style[corner.left !== undefined ? 'left' : 'right'] = "-5px"; //
 
     // attach handles to component
@@ -134,8 +129,12 @@ function addResizeHandles(element) {
       element.style.width = `${newWidth}px`;
       element.style.height = `${newHeight}px`;
 
-      
-
+      // Adjust child elements' sizes or styles if necessary
+      Array.from(element.children).forEach(child => {
+        // bug fix for buttons not resizing while input fields/text boxes were
+        child.style.width = `${newWidth - 20}px`; // leave some padding
+        child.style.height = `${newHeight - 20}px`; // bug fix for buttons not resizing vertically
+      });
     }
 
     function stopResize() {
@@ -157,8 +156,14 @@ function reselectElem(element) {
   });
 
   const resizeHandles = element.querySelectorAll(".resize-handle");
-  resizeHandles.forEach(handle => handle.style.display = "block");
-  element.style.border = "1px solid #4A5568";
+  resizeHandles.forEach(handle => {
+    //bug fix for distortion of handles after first resizing - forces styling on handles when selected again
+    handle.style.display = "block"; 
+    handle.style.width = "10px"; 
+    handle.style.height = "10px"; 
+    handle.style.border = "1px solid #4A5568";
+  });
+  element.style.border = "1px solid #4A5568"; 
 }
 
 document.getElementById("canvas").addEventListener("click", () => {

@@ -25,13 +25,15 @@
   .dragging {
     opacity: 0.5;
   }
-  .resizable {
-    border: 2px solid #4A5568; /* Tailwind gray-700 */
+  /* Moved formatting into app.js directly
+  */
+  /* .resizable {
+    border: 2px solid #4A5568; 
     position: relative;
-    padding: 16px; /* Tailwind p-4 */
+    padding: 16px; 
     box-sizing: border-box;
-}
-.resize-handle {
+} */
+/* .resize-handle {
     width: 15px; 
     height: 15px; 
     background: transparent; 
@@ -39,7 +41,7 @@
     border-radius: 50%;
     position: absolute;
     cursor: nwse-resize;
-}
+} */
 .context-menu {
     position: absolute;
     z-index: 1000;
