@@ -1,4 +1,15 @@
 function exportHTML() {
+
+    const findElements = document.querySelectorAll("#canvas > div");
+    //bug fix - if handles are selected while exporting, should force-deselect them
+    findElements.forEach(el => {
+    const handles = el.querySelectorAll(".resize-handle");
+    handles.forEach(handle => {
+      handle.style.display = "none";
+    });
+    el.style.border = "none";
+  });
+
     const canvasContent = document.getElementById("canvas").innerHTML;
   
     // full html structure with tailwind css
