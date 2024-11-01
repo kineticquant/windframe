@@ -14,4 +14,4 @@ Drag and drop Tailwind components from the left-hand side of this application in
 - Contains a components.json which can be modified to add whatever component designs are desired, or new components as-desired
 - No limitations on where you add elements on the canvas
 
-Note that this application is still actively in development and will be enhance continuously until this message is removed.
+Note that this application is still actively in development and will be enhance continuously until this message is removed. New components will be added continuously.
