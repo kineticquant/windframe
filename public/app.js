@@ -1,22 +1,63 @@
-// Enabling drop + drag
+
+const contextMenu = document.createElement("div");
+contextMenu.className = "context-menu hidden"; // use Tailwind to hide it by default
+contextMenu.innerHTML = `
+  <button id="customTW" class="text-sm px-4 py-2 hover:bg-gray-200">Enter Custom Tailwind</button>
+  <button id="deleteComponent" class="text-sm px-4 py-2 hover:bg-gray-200">Delete</button>
+`;
+document.body.appendChild(contextMenu);
+
+function showContextMenu(event, element) {
+  event.preventDefault();
+  contextMenu.classList.remove("hidden");
+  contextMenu.style.left = `${event.clientX}px`;
+  contextMenu.style.top = `${event.clientY}px`;
+
+  document.getElementById("customTW").onclick = () => customizeTW(element);
+  document.getElementById("deleteComponent").onclick = () => deleteComponent(element);
+}
+
+function customizeTW(element) {
+  const newbgCls = prompt("Modify with custom Tailwind. Example: Enter a new color (e.g., bg-red-500):");
+  if (newbgCls) {
+    // Remove existing bg classes
+    element.classList.remove(...Array.from(element.classList).filter(cls => cls.startsWith('bg-')));
+    // Add the new bg class
+    element.classList.add(newbgCls);
+  }
+  hideContextMenu();
+}
+
+// delete component
+function deleteComponent(element) {
+  element.remove();
+  hideContextMenu();
+}
+
+function hideContextMenu() {
+  contextMenu.classList.add("hidden");
+}
+
+
+//enabling drop + drag
 function allowDrop(event) {
   event.preventDefault();
 }
 function drag(event, componentHtml) {
   event.dataTransfer.setData("text/html", componentHtml);
-  // Also set the ID of the dragged element if it's an existing component
+  // Also set ID of dragged element if it's an existing component
   const elementId = event.target.id; // Assuming the draggable element has an ID
   event.dataTransfer.setData("text/plain", elementId);
 }
 
-// Drop to canvas
+//drop to canvas
 function drop(event) {
   event.preventDefault();
 
   const componentHtml = event.dataTransfer.getData("text/html");
   const canvas = document.getElementById("canvas");
 
-  // Checks if  dropping new component from the components list otherwise its existing canvas element
+  // check if  dropping new component from the components list otherwise its existing canvas element
   if (componentHtml) {
     const crtComponent = document.createElement("div");
 
@@ -66,7 +107,11 @@ function attachEventListeners(element) {
     e.stopPropagation(); // prevents event bubbling to canvas
     reselectElem(element);
   });
+
+  //right-click context menu appears
+  element.addEventListener("contextmenu", (e) => showContextMenu(e, element));
 }
+
 
 function dragMoveStart(event) {
   event.dataTransfer.setData("text/plain", null); // for Firefox
@@ -165,3 +210,7 @@ document.getElementById("canvas").addEventListener("click", () => {
     el.style.border = "none";
   });
 });
+
+
+//hide context menu when clicking outside
+document.addEventListener("click", hideContextMenu);

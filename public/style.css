@@ -32,11 +32,23 @@
     box-sizing: border-box;
 }
 .resize-handle {
-    width: 15px; /* Size of the handle */
-    height: 15px; /* Size of the handle */
-    background: transparent; /* Transparent center */
-    border: 2px solid #4A5568; /* Thin border color */
-    border-radius: 50%; /* Make it circular */
+    width: 15px; 
+    height: 15px; 
+    background: transparent; 
+    border: 2px solid #4A5568;
+    border-radius: 50%;
     position: absolute;
-    cursor: nwse-resize; /* Default cursor for resizing */
+    cursor: nwse-resize;
 }
+.context-menu {
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+  }
+  .context-menu button {
+    width: 100
+  }
