@@ -1,8 +1,14 @@
 const contextMenu = document.createElement("div");
 contextMenu.className = "context-menu hidden"; // use Tailwind to hide it by default
 contextMenu.innerHTML = `
-  <button id="customTW" class="text-sm px-4 py-2 hover:bg-gray-200">Enter Custom Tailwind</button>
-  <button id="deleteComponent" class="text-sm px-4 py-2 hover:bg-gray-200">Delete</button>
+<ul style="display: flex; flex-direction: column;">
+  <li>
+    <button id="customTW" class="text-sm px-4 py-2 hover:bg-gray-200">Enter Custom Tailwind</button>
+  </li>
+  <li>
+    <button id="deleteComponent" class="text-sm px-4 py-2 hover:bg-gray-200">Delete</button>
+  </li>
+</ul>
 `;
 document.body.appendChild(contextMenu);
 
