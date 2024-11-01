@@ -16,4 +16,4 @@ Drag and drop Tailwind components from the left-hand side of this application in
   
 ![Windframe](https://github.com/user-attachments/assets/fa93eed3-1964-4039-8f58-4195bd0e9681)
 
-Note that this application is still actively in development and will be enhance continuously until this message is removed. New components will be added continuously.
+Note that this application is still actively in development and will be enhanced continuously until this message is removed. New components will be added.
