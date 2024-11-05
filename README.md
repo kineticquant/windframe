@@ -1,7 +1,7 @@
 # windframe
 ![In Development](https://img.shields.io/badge/status-In%20Development-yellow)
 
-Autogenerate Tailwind CSS component layouts with an HTML drag-and-drop editor. Export and save HTML file to use in your own projects.
+Autogenerate Tailwind CSS component layouts with an HTML drag-and-drop editor. Export and save HTML file to use in your own projects. This simple application has no backend which makes it super simple to utilize, and also no Javascript libraries or frameworks, reducing all dependencies down to simple Javascript, and customizable Tailwind CSS components.
  
 [![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)](#) [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](#) [![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](#)
 
