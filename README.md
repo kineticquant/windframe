@@ -13,6 +13,8 @@ Drag and drop Tailwind components from the left-hand side of this application in
 - Serverless setup and has absolutely no back-end
 - Contains a components.json which can be modified to add whatever component designs are desired, or new components as-desired
 - No limitations on where you add elements on the canvas
+- No JS frameworks or libraries, so no management of dependencies required
+
   
 ![Windframe](https://github.com/user-attachments/assets/fa93eed3-1964-4039-8f58-4195bd0e9681)
 
