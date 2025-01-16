@@ -19,4 +19,5 @@ Drag and drop Tailwind components from the left-hand side of this application in
 
 
 ![In Development](https://img.shields.io/badge/status-In%20Development-yellow)
+
 Note that this application is still actively in development and will be enhanced continuously until this message is removed. New components will be added over time.
